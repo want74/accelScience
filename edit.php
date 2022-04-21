@@ -145,66 +145,50 @@
     <!--Контент-->
     <div class="container-fluid">
         <div class="row">
-            <div class="col left">
-                <div class="row">
-                    <img src="img/logo.svg" class="w-25 mx-auto" style="margin-top: 30vh;">
-                </div>
-                <div class="row">
-                    <p class="spec text-white">Программа</p>
-                </div>
-                <div class="row mb-5">
-                    <p class="ourProject text-white">ACCEL SCIENCE</p>
-                </div>
-                <div class="row">
-                    <p class="slogan w-75 mx-auto">прокачай предпринимательские навыки, запусти свой стартап, получи
-                        поддержку менторов, найди новых друзей! </p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="col-6 mx-auto">
-                        <div class="row" style="margin-top: 20vh;">
-                            <h1 class="head-reg">Вход в аккаунт</h1>
-                        </div>
-                        <div class="row sec">
-                            <p class="text-reg">Для успешного входа заполните следующее...  </p>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <form action="going.php" method="post" class="w-100">
-                                <div class="row mt-4" style="margin-bottom: 10vh;">
-                                    <div class="col">
-                                        <div class="row">
-                                            <p class="login">Логин</p>
-                                        </div>
-                                        <div class="row">
-                                            <input type="text" name="login" class="form-control text-white"
-                                                placeholder="Alexey Semenov">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mt-4">
-                                    <div class="col">
-                                        <div class="row">
-                                            <p class="login">Пароль</p>
-                                        </div>
-                                        <div class="row">
-                                            <input type="password" name="pass" class="form-control text-white" placeholder="Password">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mt-4">
-                                    <button class="btn btn-choice mx-auto w-25">
-                                        Дальше
-                                    </button>
-                                </div>
-                                </form>
+            <div class="col-3 mx-auto">
+                <form action="reg.php" method="post" class="w-100">
+                    <div class="row mt-4">
+                        <div class="col">
+                            <div class="row">
+                                <p class="login">Логин</p>
+                            </div>
+                            <div class="row">
+                                <input type="text" name="login" class="form-control text-white"
+                                    placeholder="Например: Alexey Semenov">
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <div class="row">
+                                <p class="login">Почта</p>
+                            </div>
+                            <div class="row">
+                                <input type="email" name="email" class="form-control text-white"
+                                    placeholder="Enter email address">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <div class="row">
+                                <p class="login">Создайте надежный пароль</p>
+                            </div>
+                            <div class="row">
+                                <input type="password" name="pass" class="form-control text-white"
+                                    placeholder="Password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <button class="btn btn-choice mx-auto w-25">
+                            Дальше
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
+
 
     </div>
     <script src="script/jquery-2.2.1.min.js"></script>

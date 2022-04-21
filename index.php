@@ -78,6 +78,23 @@
             line-height: 20px;
         }
 
+        .btn-inline-choice {
+            border: 1px solid #8080FF;
+            box-sizing: border-box;
+            border-radius: 4px;
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 20px;
+            /* identical to box height, or 133% */
+
+            text-align: center;
+            letter-spacing: -0.24px;
+
+            color: rgba(255, 255, 255, 0.5);
+        }
+
         /*Первый текст во втором слайде*/
         .f-text {
             font-family: 'Open Sans', sans-serif;
@@ -176,7 +193,7 @@
 
             color: rgba(255, 255, 255, 0.5);
         }
-        
+
         /*Сектор навигационной панель*/
         .sec {
             height: auto;
@@ -464,7 +481,12 @@
                         </div>
                         <div class="row mt-3">
                             <div class="col-6 mx-auto">
-                                <button class="btn btn-choice">Выбирай свою стоимость программы</button>
+                                <div class="row">
+                                    <a href="regist.php"><button class="btn btn-choice">Зарегестрироваться</button></a>
+                                </div>
+                                <div class="row mt-3">
+                                    <a href="go.php"><button class="btn btn-inline-choice">Войти</button></a>
+                                </div>
                             </div>
                         </div>
                     </div>
