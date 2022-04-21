@@ -176,23 +176,7 @@
 
             color: rgba(255, 255, 255, 0.5);
         }
-
-        /*Линии пагинации*/
-        .line {
-            width: 100px !important;
-            height: 1px !important;
-            border: 2px solid white !important;
-        }
-
-        /*пагинация слайдов*/
-        .pagination {
-            position: fixed;
-            left: 80vw;
-            top: 40vh;
-            height: 100px;
-            width: 200px;
-        }
-
+        
         /*Сектор навигационной панель*/
         .sec {
             height: auto;
@@ -244,11 +228,19 @@
             border: 0;
         }
 
-        /*3д модель на фоне*/
+        /*3д модель на фоне1*/
         .bg-huinya1 {
             background-image: url(img/huinya1.svg);
             background-position: center;
             background-size: 100vh 100vh;
+            background-repeat: no-repeat;
+        }
+
+        /*3д модель на фоне2*/
+        .bg-huinya2 {
+            background-image: url(img/huinya2.svg);
+            background-position: center;
+            background-size: 70vh 70vh;
             background-repeat: no-repeat;
         }
 
@@ -298,22 +290,62 @@
 
             color: rgba(255, 255, 255, 0.5);
         }
+
+        /*Уникальный заголовок слайд на последнем*/
+        .uniqHead {
+            font-size: 28px !important;
+        }
+
+        /*Границы фиол на последнем слайде*/
+        .border-spec {
+            border: 1px solid #8080FF;
+            box-sizing: border-box;
+            border-radius: 14px;
+            height: 70px;
+        }
+
+        /*Фиол текст на посл слайде*/
+        .text-ruki {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 128.19%;
+            /* or 21px */
+
+            text-align: center;
+            letter-spacing: 0.12em;
+
+            color: #8080FF;
+        }
+
+        .huinyaSlide1 {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            top: -700px;
+            left: 100px;
+        }
+
+        .huinyaSlide2 {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            top: -300px;
+            left: -100px;
+        }
+
+        .huinyaSlide3 {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            top: -500px;
+            left: 300px;
+        }
     </style>
 </head>
 
 <body>
-    <!--Пагинация-->
-    <div class="pagination d-block">
-        <a href="#home" class="">
-            <div class="line active"></div>
-        </a>
-        <a href="#ad" class="">
-            <div class="line my-4"></div>
-        </a>
-        <a href="#set" class="">
-            <div class="line"></div>
-        </a>
-    </div>
     <!--Навигатор-->
     <div class="row">
         <div class="col-3 showed">
@@ -535,7 +567,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row" style="margin-top: 30vh;">
+                        <div class="row" style="margin-top: 20vh;">
                             <div class="col">
                                 <div class="row">
                                     <div class="col-2 circle d-flex">
@@ -591,6 +623,136 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <!--Слайд 4-->
+        <div class="row panel" style="height:100vh;" data-section-name="wait" id="wait">
+            <div class="col-10 mx-auto bg-huinya2" style="height:100vh;">
+                <div class="row" style="height:100vh; color:white;">
+                    <div class="col">
+                        <div class="row">
+                            <h1 class="spec mx-auto mt-5">Что тебя ждёт:</h1>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-2 circle d-flex">
+                                <p class="my-auto mx-auto">1</p>
+                            </div>
+                            <div class="col-3 text-prog d-flex">
+                                <p class="my-auto">
+                                    Безлимитный доступ к записям 12 встреч с менторами
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+
+                            <div class="col-3 text-prog d-flex ms-auto">
+                                <p class="my-auto">
+                                    Чат вопросов и ответов по заданиям программы
+
+                                </p>
+                            </div>
+                            <div class="col-2 circle d-flex">
+                                <p class="my-auto mx-auto">5</p>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-2 circle d-flex">
+                                <p class="my-auto mx-auto">2</p>
+                            </div>
+                            <div class="col-3 text-prog d-flex">
+                                <p class="my-auto">
+                                    Участие в онлайн-zoom встречах 2 раза в месяц
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+
+                            <div class="col-3 text-prog d-flex ms-auto">
+                                <p class="my-auto">
+                                    Возможность получить личную менторскую поддержку для своего проекта
+
+
+                                </p>
+                            </div>
+                            <div class="col-2 circle d-flex">
+                                <p class="my-auto mx-auto">6</p>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-2 circle d-flex">
+                                <p class="my-auto mx-auto">3</p>
+                            </div>
+                            <div class="col-3 text-prog d-flex">
+                                <p class="my-auto">
+                                    Возможность презентовать свой проект на демо-дне 1 раз в 3 месяца
+
+
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+
+                            <div class="col-3 text-prog d-flex ms-auto">
+                                <p class="my-auto">
+                                    Выбрать свою оплату за программу
+
+                                </p>
+                            </div>
+                            <div class="col-2 circle d-flex">
+                                <p class="my-auto mx-auto">7</p>
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-2 circle d-flex">
+                                <p class="my-auto mx-auto">4</p>
+                            </div>
+                            <div class="col-3 text-prog d-flex">
+                                <p class="my-auto">
+                                    Доступ к комьюнити молодых успешных предпринимателей
+
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Слайд 4-->
+        <div class="row panel" style="height:100vh;" data-section-name="end" id="end">
+            <div class="col-10 mx-auto" style="height:100vh;">
+                <div class="row" style="height:100vh; color:white;">
+                    <div class="col">
+                        <div class="row border-spec" style="margin-top: 15vh;">
+                            <h1 class="text-white spec uniqHead my-auto">
+                                Защита своих проектов перед инвесторами каждые 3 месяца
+                            </h1>
+                        </div>
+                        <div class="row" style="margin-top: 20vh;">
+                            <div class="col-6 mx-auto text-center">
+                                <div class="row">
+                                    <p class="text-ruki">
+                                        Все в твоих руках!
+                                    </p>
+                                </div>
+                                <div class="row">
+                                    <p class="text-prog">
+                                        Мы тебе даем все наши возможности и поддержку! <br><br>
+
+                                        Ты можешь выбрать свою комфортную оплату за программу. Все средства идут в
+                                        дальнейшие развитие проекта AccelScience и поддержку молодых предпринимателей!
+
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <img src="img/huinyaslide1.svg" class="huinyaSlide1">
+            <img src="img/huinyaslide2.svg" class="huinyaSlide2">
+            <img src="img/huinyaslide3.svg" class="huinyaSlide3">
         </div>
     </div>
     <script src="script/jquery-2.2.1.min.js"></script>
