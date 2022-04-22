@@ -535,7 +535,7 @@
                     <div class="col">
                         <div class="row">
                             <h1 class="spec">
-                                Проекты участников акселератора
+                                Проекты участников акселератора:
                             </h1>
                         </div>
                         <div class="row" style="height: 33vh;margin-top:5vh;">
