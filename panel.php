@@ -454,7 +454,7 @@
                         <a href="index.php#end" class="headText mt-2 mb-4">О защите</a>
                     </div>
                     <div class="row">
-                        <a href="index.php#raiting" class="headText mt-2 mb-4">Отзывы<a>
+                        <a href="index.php#rating" class="headText mt-2 mb-4">Отзывы<a>
                     </div>
                 </div>
             </div>
