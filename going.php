@@ -8,6 +8,6 @@ session_start();
 		header('location: index.php');
 	}
 	else{
-		header('location: index.php?error=Неверный номер или пароль');
+		header('location: go.php?error=Неверный номер или пароль');
 	}
 ?>
