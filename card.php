@@ -351,62 +351,36 @@
             <!--Секции навигатора-->
             <div class="row sec">
                 <div class="col">
-                    <div class="row">
-                        <p class="headNum mt-5 mb-4">+7 (914) 277-40-56</p>
+                    <div class="row" style="margin-top: 10vh;">
+                        <img src="img/logo.svg" class="w-25 my-4">
                     </div>
                 </div>
             </div>
             <div class="row sec">
                 <div class="col">
                     <div class="row">
-                        <p class="headNum mt-5">Программы</p>
+                        <p class="headNum mt-5">Акселератор</p>
                     </div>
                     <div class="row">
-                        <p class="headText mt-2 mb-4">Основная прграмма ACCEL SCIENCE </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row sec">
-                <div class="col">
-                    <div class="row">
-                        <p class="headNum mt-5">О нас</p>
+                        <a href="index.php#home" class="headText mt-2 mb-4">ACCEL SCIENCE</a>
                     </div>
                     <div class="row">
-                        <p class="headText mt-2 mb-3">О ACCEL SCIENCE</p>
+                        <a href="index.php#cards" class="headText mt-2 mb-4">Проекты участников</a>
                     </div>
                     <div class="row">
-                        <p class="headText mt-2 mb-3">Отзывы</p>
+                        <a href="index.php#ad" class="headText mt-2 mb-4">Наши успехи</a>
                     </div>
                     <div class="row">
-                        <p class="headText mt-2 mb-3">Партнеры</p>
+                        <a href="index.php#set" class="headText mt-2 mb-4">О программе участия</a>
                     </div>
                     <div class="row">
-                        <p class="headText mt-2 mb-3">Новости</p>
+                        <a href="index.php#wait" class="headText mt-2 mb-4">Что тебя ждет</a>
                     </div>
                     <div class="row">
-                        <p class="headText mt-2 mb-3">О нас пишут</p>
+                        <a href="index.php#end" class="headText mt-2 mb-4">О защите</a>
                     </div>
                     <div class="row">
-                        <p class="headText mt-2 mb-3">Проекты</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row sec">
-                <div class="col">
-                    <div class="row">
-                        <p class="headNum mt-5">Лагерь</p>
-                    </div>
-                    <div class="row">
-                        <p class="headText mt-2 mb-3">О проекте</p>
-                    </div>
-                    <div class="row">
-                        <p class="headText mt-2 mb-3">О программе</p>
-                    </div>
-                    <div class="row">
-                        <p class="headText mt-2 mb-3">Родителям</p>
-                    </div>
-                    <div class="row">
-                        <p class="headText mt-2 mb-3">Студентам</p>
+                        <a href="index.php#raiting" class="headText mt-2 mb-4">Отзывы<a>
                     </div>
                 </div>
             </div>
@@ -414,6 +388,9 @@
                 <div class="col">
                     <div class="row">
                         <p class="headNum mt-5">Контакты</p>
+                    </div>
+                    <div class="row">
+                        <p class="headText mt-2 mb-4">+7 (914) 277-40-56</p>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,9 @@
 <?php
-    session_start();
     include "connect.php";
     $query1 = mysqli_query($con, "SELECT * FROM projects");
+    session_start();
+    
+    $_SESSION['user_id'] = $_SESSION['user_id'];
 ?>
 
 
@@ -268,6 +270,13 @@
             background-repeat: no-repeat;
         }
 
+        .bg-huinya6 {
+            background-image: url(img/4.svg);
+            background-position: center;
+            background-size: 100vh 100vh;
+            background-repeat: no-repeat;
+        }
+
         /* Круг на третьем слайде*/
         .circle {
             width: 50px;
@@ -375,6 +384,18 @@
 
             border-radius: 11px;
             height: 150px;
+            width: 300px !important;
+        }
+
+        /*Карточка проекта*/
+        .cardPr1 {
+            background: rgba(50, 50, 255, 0.21);
+            backdrop-filter: blur(26px);
+            /* Note: backdrop-filter has minimal browser support */
+
+            border-radius: 11px;
+            height: auto;
+            width: 300px !important;
         }
 
         .t-text {
@@ -393,14 +414,6 @@
 
         .d {
             color: white;
-        }
-
-        input {
-            background: #282828 !important;
-            border: 1px solid #8080FF !important;
-            box-sizing: border-box !important;
-            border-radius: 6px !important;
-            height: 5vh;
         }
     </style>
 </head>
@@ -480,149 +493,105 @@
     </button>
     <!--Контент-->
     <div class="container">
-
-
-
-        <!--Слайд 3-->
-        <div class="row panel" style="height:100vh;" data-section-name="set" id="set">
+        <!--Карточки-->
+        <div class="row panel" style="height:100vh;" data-section-name="cards" id="cards">
             <div class="col-10 mx-auto" style="height:100vh;">
                 <div class="row" style="height:100vh; color:white;">
-                    <form action="newins.php" method="post">
-                        <div class="col">
-                            <div class="row">
-                                <h1 class="spec mx-auto mt-5">Что включает программа</h1>
-                            </div>
-                            <div class="row mb-5" style="margin-top: 10vh;">
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="col-2 circle d-flex">
-                                            <p class="my-auto mx-auto">1</p>
-                                        </div>
-                                        <div class="col head-prog">
-                                            <p>
-                                                Вставьте ссылку YouTube презентацию
-                                            </p>
-                                        </div>
+                    <div class="col">
+                        <div class="row">
+                            <h1 class="spec">
+                                Как пользоваться FigJam
+                            </h1>
+                        </div>
+                        <div class="row" style="margin-top:5vh;height:50vh;">
+                            <iframe src="https://www.youtube.com/embed/jZXNPFGcuPo" title="YouTube video player"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-2 circle d-flex">
+                                        <p class="my-auto mx-auto">1</p>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-1">
+                                    <div class="col head-prog">
+                                        <div class="row">
+                                            <a href="https://www.figma.com/file/3wN5EFzhMLRCIsWp7CURIh/mpitgame-2022?node-id=0%3A1" class="head-prog">
+                                                FigJam
+                                            </a>
                                         </div>
-                                        <div class="col text-prog">
-                                            <input type="text" name="yt" class="form-control text-white"
-                                                placeholder="Вставить">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="col-2 circle d-flex">
-                                            <p class="my-auto mx-auto">2</p>
-                                        </div>
-                                        <div class="col head-prog">
-                                            <p>
-                                                Вставьте ссылку OneDrive
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-1">
-                                        </div>
-                                        <div class="col text-prog">
-                                            <input type="text" name="word" class="form-control text-white"
-                                                placeholder="Вставить">
+                                        <div class="row">
+                                            <div class="col text-prog">
+                                                <p>
+                                                    Предоставлены рабочие графы(расписание,user story map)
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row" style="margin-top: 20vh;">
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="col-2 circle d-flex">
-                                            <p class="my-auto mx-auto">3</p>
-                                        </div>
-                                        <div class="col head-prog">
-                                            Тема вашего проекта
-                                        </div>
+                                <div class="row">
+                                    <div class="col-2 circle d-flex">
+                                        <p class="my-auto mx-auto">2</p>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-1">
+                                    <div class="col ">
+                                        <div class="row">
+                                            <a href="https://drive.google.com/drive/folders/1o2xX4SloKE0uMYmhXVud3Q6OJY1Le60P?usp=sharing" class="head-prog">
+                                                Work Folder
+                                            </a>
                                         </div>
-                                        <div class="col text-prog">
-                                            <input type="text" name="title" class="form-control text-white"
-                                                placeholder="Тема">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="col-2 circle d-flex">
-                                            <p class="my-auto mx-auto">4</p>
-                                        </div>
-                                        <div class="col head-prog">
-                                            <p>
-                                                Необходимая сумма
-
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-1">
-                                        </div>
-                                        <div class="col text-prog">
-                                            <input type="text" name="money" class="form-control text-white"
-                                                placeholder="XXX XXX руб">
+                                        <div class="row">
+                                            <div class="col text-prog">
+                                                <p>
+                                                    Предоставлены рабочие документы которые будет необходимо заполнять
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row mt-5">
-                                <button class="btn btn-choice w-50 mx-auto">
-                                    Отправить заявку
-                                </button>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    <script src="script/jquery-2.2.1.min.js"></script>
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
-    </script>
-    <script src="script/jquery.scrollify.js"></script>
-    <script>
-        let btn = document.querySelector('.burger')
-        let burger = document.querySelector('.burgerimg')
-        let krest = document.querySelector('.krestimg')
-        let showed = document.querySelector('.showed')
-        let bul = true
 
-        function hshow() {
+        <script src="script/jquery-2.2.1.min.js"></script>
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+        </script>
+        <script src="script/jquery.scrollify.js"></script>
+        <script>
+            let btn = document.querySelector('.burger')
+            let burger = document.querySelector('.burgerimg')
+            let krest = document.querySelector('.krestimg')
+            let showed = document.querySelector('.showed')
+            let bul = true
 
-            if (bul == true) {
-                showed.classList.add('animate');
-                showed.classList.remove('animateback');
-                burger.style.display = "none"
-                krest.style.display = "block"
-                bul = false
-            } else {
-                showed.classList.remove('animate');
-                showed.classList.add('animateback');
-                burger.style.display = "block"
-                krest.style.display = "none"
-                bul = true
+            function hshow() {
+
+                if (bul == true) {
+                    showed.classList.add('animate');
+                    showed.classList.remove('animateback');
+                    burger.style.display = "none"
+                    krest.style.display = "block"
+                    bul = false
+                } else {
+                    showed.classList.remove('animate');
+                    showed.classList.add('animateback');
+                    burger.style.display = "block"
+                    krest.style.display = "none"
+                    bul = true
+                }
             }
-        }
 
-        $.scrollify({
-            section: ".panel",
-            scrollbars: false,
-            scrollSpeed: 100,
-        })
-    </script>
+            $.scrollify({
+                section: ".panel",
+                scrollbars: false,
+                scrollSpeed: 100,
+            })
+        </script>
 </body>
 
 </html>

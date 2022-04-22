@@ -6,8 +6,8 @@ session_start();
 	if (mysqli_num_rows($query)>0) {
 		$_SESSION['user_id']=$stroka['id'];
 		header('location: index.php');
-	}
-	else{
+        echo $_SESSION['user_id'];
+    }else{
 		header('location: go.php?error=Неверный номер или пароль');
 	}
 ?>

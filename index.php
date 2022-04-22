@@ -2,8 +2,6 @@
     include "connect.php";
     $query1 = mysqli_query($con, "SELECT * FROM projects");
     session_start();
-    
-    $_SESSION['user_id'] = $_SESSION['user_id'];
 ?>
 
 
@@ -207,6 +205,16 @@
         .sec {
             height: auto;
             border-bottom: 1px solid #313131;
+
+        }
+
+        a {
+            text-decoration: none !important;
+        }
+
+        a:hover {
+            color: #FFFFFF;
+            transition: 0.3s;
         }
 
         /*Стили навигатора*/
@@ -267,6 +275,13 @@
             background-image: url(img/huinya2.svg);
             background-position: center;
             background-size: 70vh 70vh;
+            background-repeat: no-repeat;
+        }
+
+        .bg-huinya6 {
+            background-image: url(img/4.svg);
+            background-position: center;
+            background-size: 100vh 100vh;
             background-repeat: no-repeat;
         }
 
@@ -377,6 +392,18 @@
 
             border-radius: 11px;
             height: 150px;
+            width: 300px !important;
+        }
+
+        /*Карточка проекта*/
+        .cardPr1 {
+            background: rgba(50, 50, 255, 0.21);
+            backdrop-filter: blur(26px);
+            /* Note: backdrop-filter has minimal browser support */
+
+            border-radius: 11px;
+            height: auto;
+            width: 300px !important;
         }
 
         .t-text {
@@ -396,8 +423,6 @@
         .d {
             color: white;
         }
-
-        
     </style>
 </head>
 
@@ -408,62 +433,36 @@
             <!--Секции навигатора-->
             <div class="row sec">
                 <div class="col">
-                    <div class="row">
-                        <p class="headNum mt-5 mb-4">+7 (914) 277-40-56</p>
+                    <div class="row" style="margin-top: 10vh;">
+                        <img src="img/logo.svg" class="w-25 my-4">
                     </div>
                 </div>
             </div>
             <div class="row sec">
                 <div class="col">
                     <div class="row">
-                        <p class="headNum mt-5">Программы</p>
+                        <p class="headNum mt-5">Акселератор</p>
                     </div>
                     <div class="row">
-                        <p class="headText mt-2 mb-4">Основная прграмма ACCEL SCIENCE </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row sec">
-                <div class="col">
-                    <div class="row">
-                        <p class="headNum mt-5">О нас</p>
+                        <a href="index.php#home" class="headText mt-2 mb-4">ACCEL SCIENCE</a>
                     </div>
                     <div class="row">
-                        <p class="headText mt-2 mb-3">О ACCEL SCIENCE</p>
+                        <a href="index.php#cards" class="headText mt-2 mb-4">Проекты участников</a>
                     </div>
                     <div class="row">
-                        <p class="headText mt-2 mb-3">Отзывы</p>
+                        <a href="index.php#ad" class="headText mt-2 mb-4">Наши успехи</a>
                     </div>
                     <div class="row">
-                        <p class="headText mt-2 mb-3">Партнеры</p>
+                        <a href="index.php#set" class="headText mt-2 mb-4">О программе участия</a>
                     </div>
                     <div class="row">
-                        <p class="headText mt-2 mb-3">Новости</p>
+                        <a href="index.php#wait" class="headText mt-2 mb-4">Что тебя ждет</a>
                     </div>
                     <div class="row">
-                        <p class="headText mt-2 mb-3">О нас пишут</p>
+                        <a href="index.php#end" class="headText mt-2 mb-4">О защите</a>
                     </div>
                     <div class="row">
-                        <p class="headText mt-2 mb-3">Проекты</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row sec">
-                <div class="col">
-                    <div class="row">
-                        <p class="headNum mt-5">Лагерь</p>
-                    </div>
-                    <div class="row">
-                        <p class="headText mt-2 mb-3">О проекте</p>
-                    </div>
-                    <div class="row">
-                        <p class="headText mt-2 mb-3">О программе</p>
-                    </div>
-                    <div class="row">
-                        <p class="headText mt-2 mb-3">Родителям</p>
-                    </div>
-                    <div class="row">
-                        <p class="headText mt-2 mb-3">Студентам</p>
+                        <a href="index.php#raiting" class="headText mt-2 mb-4">Отзывы<a>
                     </div>
                 </div>
             </div>
@@ -471,6 +470,9 @@
                 <div class="col">
                     <div class="row">
                         <p class="headNum mt-5">Контакты</p>
+                    </div>
+                    <div class="row">
+                        <p class="headText mt-2 mb-4">+7 (914) 277-40-56</p>
                     </div>
                 </div>
             </div>
@@ -503,7 +505,10 @@
         <div class="row text-center panel" style="height:100vh;" data-section-name="home" id="home">
             <div class="col-10 mx-auto" style="height:100vh;">
                 <div class="row" style="height:100vh; color:white;">
-                    <div class="col my-auto">
+                    <div class="col">
+                        <div class="row">
+                            <img src="img/logo.svg" class="w-25 mx-auto my-3">
+                        </div>
                         <div class="row">
                             <p class="spec">Программа</p>
                         </div>
@@ -519,11 +524,12 @@
                             </div>
                         </div>
                         <?php
-                        
-                            echo'<div class="row mt-3"><div class="col-6 mx-auto"><div class="row"><a href="regist.php"><button class="btn btn-choice">Зарегестрироваться</button></a></div><div class="row mt-3"><a href="go.php"><button class="btn btn-inline-choice">Войти</button></a></div></div></div>';
-                        
-                        ?>
-                        
+                         if($_SESSION['user_id']==0){
+                            echo'<div class="row mt-3"><div class="col-6 mx-auto"><div class="row"><a href="regist.php"><button class="btn btn-choice">Зарегистрироваться</button></a></div><div class="row mt-3"><a href="go.php"><button class="btn btn-inline-choice">Войти</button></a></div></div></div>';
+                         }else{
+                            echo'<div class="row mt-3"><div class="col-6 mx-auto"><div class="row"><a href="panel.php"><button class="btn btn-choice">Рабочая панель</button></a></div></div></div>';
+                         }
+                        ?>                        
                     </div>
                 </div>
             </div>
@@ -549,7 +555,7 @@
                             ?>
 
 
-                            <div class="col-3 mx-auto cardPr text-center">
+                            <div class="col-3 cardPr text-center mx-auto mt-3">
                                 <?php
                             echo '<a style="text-decoration:none;" href="card.php?id='.$stroka1['id'].'">'
                             ?>
@@ -571,7 +577,7 @@
                             <?php
                                 };
                             ?>
-                            <div class="col-3 mx-auto cardPr text-center d-flex">
+                            <div class="col-3 mx-auto cardPr text-center d-flex mt-3">
                                 <a href="new.php" class="my-auto mx-auto">
                                     <img src="img/new.svg" class="my-auto">
                                 </a>
@@ -610,10 +616,10 @@
                         <div class="row" style="height: 33vh;">
                             <div class="col-4 ms-auto">
                                 <div class="row mt-3">
-                                    <h1 class="f-text">$50 млрд</h1>
+                                    <h1 class="f-text">500 учеников</h1>
                                 </div>
                                 <div class="row">
-                                    <p class="s-text">Капитализация компании, построенных нашими менторами </p>
+                                    <p class="s-text">Добавляются в коллектив</p>
                                 </div>
                             </div>
                         </div>
@@ -864,47 +870,154 @@
                 </div>
             </div>
 
+
+
             <img src="img/huinyaslide1.svg" class="huinyaSlide1">
             <img src="img/huinyaslide2.svg" class="huinyaSlide2">
             <img src="img/huinyaslide3.svg" class="huinyaSlide3">
+
+            <!--Карточки-->
+            <div class="row panel" style="height:100vh;" data-section-name="rating" id="rating">
+                <div class="col-10 mx-auto bg-huinya6" style="height:100vh;">
+                    <div class="row" style="height:100vh; color:white;">
+                        <div class="col">
+                            <div class="row">
+                                <h1 class="spec">
+                                    Отзывы
+                                </h1>
+                            </div>
+                            <div class="row" style="height: 33vh;margin-top:5vh;">
+
+
+                                <div class="col-3 cardPr1 text-center mx-auto mt-3">
+                                    <div class="row mt-3">
+                                        <p class="t-text mt-3">Эти насыщенные недели прошли очень подуктивно! Мы с
+                                            командой узнали очень много)</p>
+                                    </div>
+                                    <div class="row " style="height: 40%;">
+                                        <p class="t-text d mt-auto">
+                                            Быков Даниил
+                                        </p>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-3 cardPr1 text-center mx-auto mt-3">
+                                    <div class="row mt-3">
+                                        <p class="t-text mt-3">С начала мы не надеялись на победу, но после оповещении
+                                            результатов мы были в шоке, сколько нам дали инвестицию в проект!</p>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <p class="t-text d">
+                                            Максимова Алина
+                                        </p>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-3 cardPr1 text-center mx-auto mt-3">
+                                    <div class="row mt-3">
+                                        <p class="t-text mt-3">Все прошло очень круто, познакомился с единомышленниками.
+                                        </p>
+                                    </div>
+                                    <div class="row" style="height: 50%;">
+                                        <p class="t-text d mt-auto">
+                                            Винокуров Эрхан
+                                        </p>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-3 cardPr1 text-center mx-auto mt-3">
+                                    <div class="row mt-3">
+                                        <p class="t-text mt-3">У меня совершенно не было опыта, но благодаря
+                                            AccelScience я открыл для себя новый мир</p>
+                                    </div>
+                                    <div class="row" style="height: 35%;">
+                                        <p class="t-text d mt-auto">
+                                            Семенов Иннокентий
+                                        </p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-3 cardPr1 text-center mx-auto mt-3">
+                                    <div class="row mt-3">
+                                        <p class="t-text mt-3">Я набралась опыта и готова самостоятельно упаковывать
+                                            проекты)</p>
+                                    </div>
+                                    <div class="row" style="height: 45%;">
+                                        <p class="t-text d mt-auto">
+                                            Тимофеева Алена
+                                        </p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-3 cardPr1 text-center mx-auto mt-3">
+                                    <div class="row mt-3">
+                                        <p class="t-text mt-3">Я пришел на акселератор с готовым проектои и честно я не
+                                            ожидал столько финансирования в мой проект!</p>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <p class="t-text d">
+                                            Андросов Айаал
+                                        </p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-3 cardPr1 text-center mx-auto mt-3">
+                                    <div class="row mt-3">
+                                        <p class="t-text mt-3">Благодаря акселераторе, мы с командой смогли упаковать и
+                                            реализовать наш проект! Спасибо AccelScience!</p>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <p class="t-text d">
+                                            Кривошапкина Дарина
+                                        </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <script src="script/jquery-2.2.1.min.js"></script>
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
-    </script>
-    <script src="script/jquery.scrollify.js"></script>
-    <script>
-        let btn = document.querySelector('.burger')
-        let burger = document.querySelector('.burgerimg')
-        let krest = document.querySelector('.krestimg')
-        let showed = document.querySelector('.showed')
-        let bul = true
+        <script src="script/jquery-2.2.1.min.js"></script>
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+        </script>
+        <script src="script/jquery.scrollify.js"></script>
+        <script>
+            let btn = document.querySelector('.burger')
+            let burger = document.querySelector('.burgerimg')
+            let krest = document.querySelector('.krestimg')
+            let showed = document.querySelector('.showed')
+            let bul = true
 
-        function hshow() {
+            function hshow() {
 
-            if (bul == true) {
-                showed.classList.add('animate');
-                showed.classList.remove('animateback');
-                burger.style.display = "none"
-                krest.style.display = "block"
-                bul = false
-            } else {
-                showed.classList.remove('animate');
-                showed.classList.add('animateback');
-                burger.style.display = "block"
-                krest.style.display = "none"
-                bul = true
+                if (bul == true) {
+                    showed.classList.add('animate');
+                    showed.classList.remove('animateback');
+                    burger.style.display = "none"
+                    krest.style.display = "block"
+                    bul = false
+                } else {
+                    showed.classList.remove('animate');
+                    showed.classList.add('animateback');
+                    burger.style.display = "block"
+                    krest.style.display = "none"
+                    bul = true
+                }
             }
-        }
 
-        $.scrollify({
-            section: ".panel",
-            scrollbars: false,
-            scrollSpeed: 100,
-        })
-    </script>
+            $.scrollify({
+                section: ".panel",
+                scrollbars: false,
+                scrollSpeed: 100,
+            })
+        </script>
 </body>
 
 </html>
