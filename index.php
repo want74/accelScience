@@ -1,6 +1,9 @@
 <?php
     include "connect.php";
     $query1 = mysqli_query($con, "SELECT * FROM projects");
+    session_start();
+    
+    $_SESSION['user_id'] = $_SESSION['user_id'];
 ?>
 
 
@@ -393,6 +396,8 @@
         .d {
             color: white;
         }
+
+        
     </style>
 </head>
 
@@ -513,16 +518,13 @@
                                     найти новых друзей ! </p>
                             </div>
                         </div>
-                        <div class="row mt-3">
-                            <div class="col-6 mx-auto">
-                                <div class="row">
-                                    <a href="regist.php"><button class="btn btn-choice">Зарегестрироваться</button></a>
-                                </div>
-                                <div class="row mt-3">
-                                    <a href="go.php"><button class="btn btn-inline-choice">Войти</button></a>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        if ($_SESSION['user_id']==0)
+                        {
+                            echo'<div class="row mt-3"><div class="col-6 mx-auto"><div class="row"><a href="regist.php"><button class="btn btn-choice">Зарегестрироваться</button></a></div><div class="row mt-3"><a href="go.php"><button class="btn btn-inline-choice">Войти</button></a></div></div></div>';
+                        }
+                        ?>
+                        
                     </div>
                 </div>
             </div>
@@ -570,7 +572,11 @@
                             <?php
                                 };
                             ?>
-
+                            <div class="col-3 mx-auto cardPr text-center d-flex">
+                                <a href="new.php" class="my-auto mx-auto">
+                                    <img src="img/new.svg" class="my-auto">
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

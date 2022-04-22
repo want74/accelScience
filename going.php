@@ -4,7 +4,7 @@ session_start();
 	$query = mysqli_query($con, "SELECT * FROM users WHERE  login='{$_POST['login']}' AND pass ='{$_POST['pass']}'");
 	$stroka=$query->fetch_assoc();
 	if (mysqli_num_rows($query)>0) {
-		$_SESSION['id']=$stroka['id'];
+		$_SESSION['user_id']=$stroka['id'];
 		header('location: index.php');
 	}
 	else{

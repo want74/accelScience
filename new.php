@@ -1,11 +1,9 @@
 <?php
     session_start();
     include "connect.php";
-    $query1 = mysqli_query($con, "SELECT * FROM projects WHERE id = {$_GET['id']} ");
-    $stroka=$query1->fetch_assoc();
-    $query2 = mysqli_query($con, "SELECT * FROM moneys WHERE project_id='{$stroka['id']}'");
-    $stroka2 = $query2->fetch_assoc();
+    $query1 = mysqli_query($con, "SELECT * FROM projects");
 ?>
+
 
 <!doctype html>
 <html lang="en">
@@ -35,16 +33,6 @@
             background-size: cover;
         }
 
-        /*Карточка проекта*/
-        .cardPr {
-            background: rgba(50, 50, 255, 0.21);
-            backdrop-filter: blur(26px);
-            /* Note: backdrop-filter has minimal browser support */
-
-            border-radius: 11px;
-            height: 150px;
-        }
-
         /*То что у нас программа?*/
         .spec {
             font-family: 'Open Sans', sans-serif;
@@ -58,32 +46,30 @@
             letter-spacing: 0.12em;
         }
 
-        .spec2 {
-            font-family: 'Open Sans';
+        /*Название нашего прокта*/
+        .ourProject {
+            font-family: 'Open Sans', sans-serif;
             font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
+            font-weight: 300;
+            font-size: 80px;
             line-height: 128.19%;
-            /* or 21px */
+            /* identical to box height, or 103px */
 
             text-align: center;
             letter-spacing: 0.12em;
-
-            color: rgba(255, 255, 255, 0.5);
-
         }
 
-        .cost {
-            font-family: 'Open Sans';
+        /*Слоган проекта*/
+        .slogan {
+            font-family: 'Open Sans', sans-serif;
             font-style: normal;
-            font-weight: 700;
-            font-size: 14px;
-            line-height: 19px;
-            /* identical to box height */
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 128.19%;
+            /* or 31px */
 
-            text-align: right;
-
-            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+            letter-spacing: 0.12em;
         }
 
         /*кнопка выбора программы*/
@@ -266,14 +252,29 @@
             border: 0;
         }
 
-        /*Коробка с пожертвованием*/
-        .donat {
-
-            background: rgba(115, 124, 132, 0.04);
-            backdrop-filter: blur(6px);
+        /*3д модель на фоне1*/
+        .bg-huinya1 {
+            background-image: url(img/huinya1.svg);
+            background-position: center;
+            background-size: 100vh 100vh;
+            background-repeat: no-repeat;
         }
 
-        .sss {
+        /*3д модель на фоне2*/
+        .bg-huinya2 {
+            background-image: url(img/huinya2.svg);
+            background-position: center;
+            background-size: 70vh 70vh;
+            background-repeat: no-repeat;
+        }
+
+        /* Круг на третьем слайде*/
+        .circle {
+            width: 50px;
+            height: 50px;
+            background: #8080FF;
+            border-radius: 213123px;
+
             font-family: 'Open Sans';
             font-style: normal;
             font-weight: 400;
@@ -281,10 +282,99 @@
             line-height: 128.19%;
             /* identical to box height, or 31px */
 
+            letter-spacing: 0.12em;
+
+            color: #000000;
+        }
+
+        /*Заголовок состовляющих программы*/
+        .head-prog {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 128.19%;
+            /* or 31px */
+
+            letter-spacing: 0.12em;
+
+            color: #8080FF;
+        }
+
+        /*Текст состовляющих программы*/
+        .text-prog {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 128.19%;
+            /* or 21px */
+
+            letter-spacing: 0.12em;
+
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /*Уникальный заголовок слайд на последнем*/
+        .uniqHead {
+            font-size: 28px !important;
+        }
+
+        /*Границы фиол на последнем слайде*/
+        .border-spec {
+            border: 1px solid #8080FF;
+            box-sizing: border-box;
+            border-radius: 14px;
+            height: 70px;
+        }
+
+        /*Фиол текст на посл слайде*/
+        .text-ruki {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 128.19%;
+            /* or 21px */
+
             text-align: center;
             letter-spacing: 0.12em;
 
             color: #8080FF;
+        }
+
+        .huinyaSlide1 {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            top: -700px;
+            left: 100px;
+        }
+
+        .huinyaSlide2 {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            top: -300px;
+            left: -100px;
+        }
+
+        .huinyaSlide3 {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            top: -500px;
+            left: 300px;
+        }
+
+        /*Карточка проекта*/
+        .cardPr {
+            background: rgba(50, 50, 255, 0.21);
+            backdrop-filter: blur(26px);
+            /* Note: backdrop-filter has minimal browser support */
+
+            border-radius: 11px;
+            height: 150px;
         }
 
         .t-text {
@@ -303,35 +393,6 @@
 
         .d {
             color: white;
-        }
-
-
-        /*текст*/
-        .text-reg {
-            font-style: normal;
-            font-weight: 400;
-            font-size: 22px;
-            line-height: 28px;
-            /* or 156% */
-
-            display: flex;
-            align-items: center;
-
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .login {
-            font-family: 'Open Sans';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 18px;
-            /* identical to box height, or 129% */
-
-            letter-spacing: -0.154px;
-
-            color: rgba(255, 255, 255, 0.5);
-
         }
 
         input {
@@ -440,100 +501,114 @@
         <img src="img/burger.svg" class="burgerimg">
         <img src="img/krest.svg" style="display: none;" class="krestimg">
     </button>
-
-
-
     <!--Контент-->
     <div class="container">
-        <div class="row modalShow" style="height: 100vh;display:none;">
-            <div class="col-6 mx-auto donat" style="height: 70vh;margin-top:10vh;">
-                <div class="row text-center ">
-                    <p class="mx-auto sss mt-5">Пожертвовать</p>
-                </div>
-                <div class="row ">
-                    <div class="col-6 mx-auto cardPr text-center">
 
-                        <div class="row mt-3">
-                            <p class="t-text mt-3"><?php
-                                echo $stroka['title']
-                                ?></p>
-                        </div>
-                        <div class="row mt-2">
-                            <p class="t-text d"><?php
-                                echo $stroka2['now'];
-                                echo "/";
-                                echo $stroka['money'];
-                                ?></p>
-                        </div>
-                        <form action="plus.php" method="post">
-                            <div class="row mt-5" style="margin-bottom: 10vh;">
+
+
+        <!--Слайд 3-->
+        <div class="row panel" style="height:100vh;" data-section-name="set" id="set">
+            <div class="col-10 mx-auto" style="height:100vh;">
+                <div class="row" style="height:100vh; color:white;">
+                    <form action="newins.php" method="post">
+                        <div class="col">
+                            <div class="row">
+                                <h1 class="spec mx-auto mt-5">Что включает программа</h1>
+                            </div>
+                            <div class="row mb-5" style="margin-top: 10vh;">
                                 <div class="col">
                                     <div class="row">
-                                        <p class="login">Сумма</p>
+                                        <div class="col-2 circle d-flex">
+                                            <p class="my-auto mx-auto">1</p>
+                                        </div>
+                                        <div class="col head-prog">
+                                            <p>
+                                                Вставьте ссылку YouTube презентацию
+                                            </p>
+                                        </div>
                                     </div>
                                     <div class="row">
-                                        <input type="number" name="summ" class="form-control text-white"
-                                            placeholder="10000">
-
-                                        <?php
-                                        echo '<input type="number" name="project_id" class="form-control d-none text-white"
-                                        value="'.$stroka['id'].'">'
-                                        ?>
+                                        <div class="col-1">
+                                        </div>
+                                        <div class="col text-prog">
+                                            <input type="text" name="yt" class="form-control text-white"
+                                                placeholder="Вставить">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col-2 circle d-flex">
+                                            <p class="my-auto mx-auto">2</p>
+                                        </div>
+                                        <div class="col head-prog">
+                                            <p>
+                                                Вставьте ссылку OneDrive
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1">
+                                        </div>
+                                        <div class="col text-prog">
+                                            <input type="text" name="word" class="form-control text-white"
+                                                placeholder="Вставить">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row mt-4">
+                            <div class="row" style="margin-top: 20vh;">
                                 <div class="col">
-                                    <button class="btn btn-choice w-50">
-                                        Пожертвовать
-                                    </button>
+                                    <div class="row">
+                                        <div class="col-2 circle d-flex">
+                                            <p class="my-auto mx-auto">3</p>
+                                        </div>
+                                        <div class="col head-prog">
+                                            Тема вашего проекта
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1">
+                                        </div>
+                                        <div class="col text-prog">
+                                            <input type="text" name="title" class="form-control text-white"
+                                                placeholder="Тема">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col-2 circle d-flex">
+                                            <p class="my-auto mx-auto">4</p>
+                                        </div>
+                                        <div class="col head-prog">
+                                            <p>
+                                                Необходимая сумма
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-1">
+                                        </div>
+                                        <div class="col text-prog">
+                                            <input type="text" name="money" class="form-control text-white"
+                                                placeholder="XXX XXX руб">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                            <div class="row mt-5">
+                                <button class="btn btn-choice w-50 mx-auto">
+                                    Отправить заявку
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <!--Слайд 1-->
-        <div class="row text-center panel modalHide" style="" data-section-name="home" id="home">
-            <div class="col-10 mx-auto" style="">
-                <div class="row">
-                    <div class="col">
-
-
-                        <?php
-                        echo '<h1 class="spec text-white my-5">'.$stroka['title'].'</h1>'
-                        ?>
-                    </div>
-                </div>
-                <div class="row" style="color:white;">
-                    <div class="col">
-                        <?php
-                            echo '<iframe width="1000" height="500" src="'.$stroka['yt'].'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-                        ?>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <h1 class="spec text-white my-5">
-                        Реферат
-                    </h1>
-                </div>
-                <div class="row" style="color:white;">
-                    <div class="col">
-                        <?php
-                            echo '<iframe src="'.$stroka['word'].'" width="1000px" height="700px" frameborder="0">Это внедренный файл <a target="_blank" href="https://office.com">Microsoft Office</a> на платформе <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>'
-                        ?>
-
-                    </div>
-                </div>
-                <div class="row">
-                    <button class="btn btn-choice w-25 mx-auto"  onclick="show()">
-                        Пожертвовать
-                    </button>
-                </div>
-            </div>
-        </div>
+    </div>
     </div>
     <script src="script/jquery-2.2.1.min.js"></script>
     </script>
@@ -546,9 +621,6 @@
         let burger = document.querySelector('.burgerimg')
         let krest = document.querySelector('.krestimg')
         let showed = document.querySelector('.showed')
-
-        let modalShow = document.querySelector('.modalShow')
-        let modalHide = document.querySelector('.modalHide')
         let bul = true
 
         function hshow() {
@@ -568,10 +640,11 @@
             }
         }
 
-        function show() {
-            modalShow.style.display = "block"
-            modalHide.style.display = "none"
-        }
+        $.scrollify({
+            section: ".panel",
+            scrollbars: false,
+            scrollSpeed: 100,
+        })
     </script>
 </body>
 
