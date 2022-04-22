@@ -1,3 +1,9 @@
+<?php
+    include "connect.php";
+    $query1 = mysqli_query($con, "SELECT * FROM projects");
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -359,6 +365,34 @@
             top: -500px;
             left: 300px;
         }
+
+        /*Карточка проекта*/
+        .cardPr {
+            background: rgba(50, 50, 255, 0.21);
+            backdrop-filter: blur(26px);
+            /* Note: backdrop-filter has minimal browser support */
+
+            border-radius: 11px;
+            height: 150px;
+        }
+
+        .t-text {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 128.19%;
+            /* or 21px */
+
+            text-align: center;
+            letter-spacing: 0.12em;
+
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .d {
+            color: white;
+        }
     </style>
 </head>
 
@@ -493,6 +527,56 @@
                 </div>
             </div>
         </div>
+
+        <!--Карточки-->
+        <div class="row panel" style="height:100vh;" data-section-name="cards" id="cards">
+            <div class="col-10 mx-auto bg-huinya1" style="height:100vh;">
+                <div class="row" style="height:100vh; color:white;">
+                    <div class="col">
+                        <div class="row">
+                            <h1 class="spec">
+                                Проекты участников акселератора
+                            </h1>
+                        </div>
+                        <div class="row" style="height: 33vh;margin-top:5vh;">
+                            <?php
+                                for($i=0; $i<$query1->num_rows;$i++)
+                                {
+                                $stroka1 = $query1->fetch_assoc();
+                                $query2 = mysqli_query($con, "SELECT * FROM moneys WHERE project_id='{$stroka1['id']}'");
+                                $stroka2 = $query2->fetch_assoc();
+                            ?>
+
+
+                            <div class="col-3 mx-auto cardPr text-center">
+                                <?php
+                            echo '<a style="text-decoration:none;" href="card.php?id='.$stroka1['id'].'">'
+                            ?>
+                                <div class="row mt-3">
+                                    <p class="t-text mt-3"><?php
+                                    echo $stroka1['title']
+                                    ?></p>
+                                </div>
+                                <div class="row mt-2">
+                                    <p class="t-text d"><?php
+                                    echo $stroka2['now'];
+                                    echo "/";
+                                    echo $stroka1['money'];
+                                    ?></p>
+                                </div>
+                                </a>
+                            </div>
+
+                            <?php
+                                };
+                            ?>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!--Слайд 2-->
         <div class="row panel" style="height:100vh;" data-section-name="ad" id="ad">
             <div class="col-10 mx-auto bg-huinya1" style="height:100vh;">
@@ -532,6 +616,9 @@
                 </div>
             </div>
         </div>
+
+
+
         <!--Слайд 3-->
         <div class="row panel" style="height:100vh;" data-section-name="set" id="set">
             <div class="col-10 mx-auto" style="height:100vh;">
